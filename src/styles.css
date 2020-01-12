@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html,
+body {
+  font-family: sans-serif;
+  background-color:#efefef;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  font-family: 'Questrial', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #343a40;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.btn-brand {
+    color: #fff;
+    background-color: #1cac81;
+    border-color: #1cac81;
+}
+.btn-brand:hover {
+    color: #fff;
+    background-color: #168a67;
+    border-color: #106e52;
+}
+.tb-row{
+    padding:2px;
+    
+}
+.tb-action{
+    font-size:small;
+    padding:5px;
+    min-width:5rem;
+}
+.card{
+    border-radius:0;
+}
+.list-group{
+        border-radius:0;
+
+}
+.list-group-item{
+    border-radius:0;
+}
+
+.btn.btn-clean {
+    border-color: transparent;
+    background: 0 0;
+    color: #80c3af;
+}
+.btn.btn-clean:hover {
+    background-color: #eef4f3
+}

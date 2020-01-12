@@ -1,0 +1,13 @@
+<div class="card shadow-sm" style="margin: 5px;">
+<div class="card-body" >
+<h5 class="card-title">SL's reply</h5>
+<div class="d-flex">
+<pre id="reply1"><span class="badge tag-me">@online</span> {{reply}}</pre>
+</div>
+<pre id="reply2">{{distribution}}</pre>
+<button class="d-flex justify-content-center btn btn-clean btn-sm btn-brand my-sm-0" style="margin: 0px;" (click)="copyToClipboard()">
+    <fa-icon [icon]="faClone" style="margin-right:5px;"></fa-icon>
+    <div id="copy-status"> Copy</div>
+    </button>
+</div>
+</div>

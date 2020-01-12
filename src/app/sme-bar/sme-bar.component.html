@@ -1,0 +1,89 @@
+<!--SME Header-->
+   <div attr.id="{{'accordion-'+id}}" style="border-bottom:1px solid darkgray;">
+      <div class="sme-card-header accordion d-flex justify-content-between" attr.id="{{'label-'+id}}" data-toggle="collapse"
+         attr.data-target="{{'#collapse-'+id}}" aria-expanded="true" aria-controls="collapseOne" style="padding:2px;" (click)="toggleTeams()">
+         <div class="col-1 tb-row" style="padding:9px">
+            <fa-icon [icon]="faBars" size="lg" style="color:darkgrey;"></fa-icon>
+         </div>
+            <div class="col-6 tb-row" ><img src="{{avatar}}">{{name}}</div>
+            <div class="col tb-row">{{csnumber}}</div>
+            <div class="col tb-row">
+                  <div class="text-muted" style="font-size:small;font-weight: bold;">{{progressbarLoad+'%'}}</div>
+               <div class="progress" style="height:5px; width:50%">
+                  <div class="progress-bar" role="progressbar"
+                     [ngStyle]="{'width':progressbarLoad+'%','background-color':progressbarColor}" aria-valuemin="0"
+                     aria-valuemax="100">
+                  </div>
+               </div>
+            </div>
+            <div class="col dropleft tb-row d-flex justify-content-center">
+                  <button type="button" class="btn btn-clean btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <fa-icon [icon]="faEllipsisH"></fa-icon>
+                        </button>
+                        <div class="dropdown-menu tb-action">
+                              <a class="dropdown-item tb-action" (click)="DeleteSME()" style="color:darkgray;" [class.disabled]="!isRemovable"><fa-icon [icon]="faTrashAlt"></fa-icon> Delete</a>
+                        </div>
+            </div>
+      </div>
+         <!--SME Header END-->
+   <!--SME Teamlist-->
+   <div class="card" style="border:none;padding-left:0;padding-right:0;">
+         <div attr.id="{{'collapse-'+id}}" class="collapse" attr.aria-labelledby="{{'label-'+id}}"
+            attr.data-parent="{{'#accordion-'+id}}">
+            <div class="sme-card-body">
+               <ul class="list-group cs-list" [sortablejs]="teams" [sortablejsOptions]="teamOptions" >
+                   <div *ngIf="!teams.length" class="d-flex justify-content-center team-placeholder">
+                       <h3 style="margin:3px;padding:0"><fa-icon [icon]="faPlusCircle" class="team-placeholder-icon"></fa-icon></h3>
+                       </div>
+                  <li *ngFor="let team of teams" class="list-group-item custom-sortable-item" >
+                     <ul class="list-group cs-list">
+                        <div  *ngIf="team.teammates.length"  class="card" style="border:none;" attr.id="{{'accordion-'+team.className}}">
+                           <div class="card-header accordion {{team.className}} d-flex justify-content-between team-item"
+                              attr.id="{{'label-'+team.className}}" data-toggle="collapse"
+                              attr.data-target="{{'#collapse-'+team.className}}" aria-expanded="true"
+                              aria-controls="collapseOne">
+                              <h5 class="card-title team-list" style="margin-bottom: 5px;">{{team.name}}</h5>
+                              <p style="margin-bottom: 5px;">
+                                 <span class="badge badge-pill badge-secondary">
+                                    <fa-icon [icon]="faUsers"></fa-icon>
+                                    {{team.teammates.length}}
+                                 </span>
+                              </p>
+                           </div>
+                        </div>
+                        <!--CS card-->
+                        <div attr.id="{{'collapse-'+team.className}}" class="collapse "
+                           attr.aria-labelledby="{{'label-'+team.className}}"
+                           attr.data-parent="{{'#accordion-'+team.className}}">
+                           <div class="card-body" style="padding:0;" [sortablejs]="team.teammates"
+                              [sortablejsOptions]="csOptions" >
+                              <li *ngFor="let cs of team.teammates" class="list-group-item {{team.className}} cs-card"
+                                 name="teammate" style="padding:2px;">
+                                 <div class="d-flex justify-content-between">
+                                    <div class="d-flex">
+                                       <img src="{{cs.avatar}}">
+                                       <h6 class="mb-1" style="margin:3px;">{{cs.name}} [{{cs.z3kid}}]</h6>
+                                    </div>
+                                    <p style="margin:3px;">
+                                       <span class="badge badge-pill {{cs.levelClassName}}">{{cs.level}}</span>
+                                       <!--<ngb-rating [(rate)]="cs.stars" [readonly]="true" max="4">
+                                          <ng-template let-fill="fill" let-index="index">
+                                             <span class="star {{fill === 100 ? 'star-'+cs.levelClassName : ''}}"
+                                                [class.filled]="">&#9733;</span>
+                                          </ng-template>
+                                       </ngb-rating>-->
+                                    </p>
+                                 </div>
+                              </li>
+                           </div>
+                        </div>
+                        <!--CS card END-->
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!--SME Teamlist END-->

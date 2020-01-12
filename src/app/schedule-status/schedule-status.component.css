@@ -1,0 +1,40 @@
+.nav-link:hover{
+    color: #1cac81 !important;
+    border-bottom: 1px solid #1cac81;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(28, 172, 129);
+}
+.nav-link.active, a.nav-link.active{
+    color: #1cac81 !important;
+    border-bottom: 1px solid #1cac81;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(28, 172, 129);
+}
+.nav-link{
+    background-color: transparent !important;
+    color: #414b4c !important;
+}
+.nav-link{
+    border-top-color: initial;
+    border-top-style: initial;
+    border-top-width: 0px;
+    border-right-color: initial;
+    border-right-style: initial;
+    border-right-width: 0px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: initial;
+    border-left-style: initial;
+    border-left-width: 0px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+.nav-tabs{
+    border-bottom:0px;
+}

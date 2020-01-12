@@ -1,0 +1,25 @@
+.card {
+  margin: 5px;
+}
+.toast {
+  opacity: 1;
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+}
+
+.sortable-item {
+  cursor: grabbing;
+}
+.tr-jedi:hover{
+    background-color: lightgreen;
+}
+.tr-newbee:hover{
+	background-color: lightblue;
+}
+.tr-padawan:hover{
+	background-color: lightsalmon;
+}
+.tr-guru:hover{
+	background-color: #d94acd;
+}
