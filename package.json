@@ -30,7 +30,7 @@
     "@ngneat/content-loader": "^4.1.0",
     "angular-2-holderjs": "^1.0.1",
     "angular-sortablejs": "2.7.0",
-    "axios": "0.19.0",
+    "axios": "0.21.1",
     "bootstrap": "4.3.1",
     "chart.js": "^2.9.3",
     "flockos": "0.0.6",
