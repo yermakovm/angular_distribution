@@ -32,7 +32,7 @@
     "angular-sortablejs": "2.7.0",
     "axios": "0.19.0",
     "bootstrap": "4.3.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "flockos": "0.0.6",
     "holderjs": "^2.9.6",
     "jquery": "^3.4.1",
